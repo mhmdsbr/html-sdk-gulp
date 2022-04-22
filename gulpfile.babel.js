@@ -15,30 +15,27 @@
 // const del = require('del');
 // var fs = require('fs');
 // const babel = require('gulp-babel');
+// import GulpPackage from 'gulp'
+// const { src, dest, parallel, series, watch} = GulpPackage
+// const $ = require('gulp-load-plugins')();
 
-import { src, dest, parallel, series, watch} from 'gulp'
-import del from 'del'
-import babel from 'gulp-babel'
-import fs from 'fs'
+// import {src, dest, parallel, series, watch} from 'gulp';
+import del from 'del';
+import babel from 'gulp-babel';
+import fs from 'fs';
 import imagemin from 'gulp-imagemin';
 import { argv } from 'process';
-import $ from 'gulp-load-plugins';
+// import $ from 'gulp-load-plugins';
+
+const $ = require('gulp-load-plugins')();
+const { src, dest, parallel, series, watch } = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 const browserSync = require('browser-sync').create();
-var pkg = JSON.parse(fs.readFileSync('./package.json'));
-// const $ = require('gulp-load-plugins')();
+const pkg = JSON.parse(fs.readFileSync('./package.json'));
 const reload = browserSync.reload;
 const isDemo = argv.build === 'demo';
 const terser = require('gulp-terser');
 const zipFileName = `bugloos__${pkg.name}__v${pkg.version}`;
-
-// const sass = gulpSass(dartSass);
-// const sass = require('gulp-sass');
-// const compiler = require('sass');
-// sass.compiler = compiler;
-// const   sass= gulpSass(nodeSass);
-// sass.compiler = require('sass');
-// exports.sass = sass;
 
 // Lint JavaScript
 function lint() {
