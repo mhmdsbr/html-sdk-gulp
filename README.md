@@ -1,4 +1,4 @@
-# **Bugloos Started HTML Kit**
+# **Starter HTML Kit**
 
 
 ## **Quick Lunch**
